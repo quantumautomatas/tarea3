@@ -1,0 +1,78 @@
+% Tipo de documento 
+\documentclass{article}
+
+% Idioma
+\usepackage[spanish]{babel}
+
+% Márgenes amplios
+\usepackage[margin = 1.5cm]{geometry}
+
+% Estructuras lógicas
+\usepackage{bussproofs}
+
+% Algunos comandos pra trabajar con ecuaciones (alinear)
+\usepackage{amsmath}
+
+\begin{document}
+    % Título
+    \title{Autómatas y Lenguajes formales \\
+    \large 2912-2 \\
+    \large Ejercicio semanal 3}
+
+    \date{Fecha de entrega: 15 de febrero del 2019}
+
+    \author{Sandra del Mar Soto Corderi \\
+            Edgar Quiroz Castañeda}  
+    \maketitle
+    
+    % Ejercicios
+    \begin{enumerate}
+        \item {
+            Sea $L \subset \{a, b\}^*$ definido como 
+            \begin{align*}
+                \AxiomC{}
+                \UnaryInfC{$\epsilon \in L$}
+                \DisplayProof \\
+                \\
+                \AxiomC{$x \in L $}
+                \UnaryInfC{$xa \in L$}
+                \DisplayProof \\
+                \\
+                \AxiomC{$x \in L $}
+                \UnaryInfC{$xba \in L$}
+                \DisplayProof \\
+            \end{align*}
+
+            Demuestre que para toda $x \in L$ se cumple que
+            \begin{enumerate}
+                \item {
+                    $n_a(x) \geq n_b(x)$.
+                }
+                \item {
+                    $x$ no contiene la subcadena $bb$.
+                }
+            \end{enumerate}
+            
+        }
+        \item {
+            Considere las expresiones regulares
+            \begin{align*}
+                r &= a^* + b^* \\
+                s &= ab^* + ba^* + b^*a + (a^*b)^*
+            \end{align*}
+            
+            Da una cadena que cumpla lo siguiente o justifica porque no existe.
+            \begin{enumerate}
+                \item {
+                    Que corresponda a $r$ pero no a $s$.
+                }
+                \item {
+                    Que corresponda a $s$ pero no a $r$.
+                }
+                \item {
+                    Que corresponda tanto a $r$ como a $s$.
+                }
+            \end{enumerate}
+        }
+    \end{enumerate}
+\end{document}
