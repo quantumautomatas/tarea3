@@ -46,10 +46,91 @@
             Demuestre que para toda $x \in L$ se cumple que
             \begin{enumerate}
                 \item {
-                    $n_a(x) \geq n_b(x)$.
+                    $n_a(x) \geq n_b(x)$.\\
+                    Como $L$ tiene una definición recursiva, tiene un principio 
+                    de inducción estructural.\\
+                    Entonces, demostremos esta propiedad por inducción.
+                    \begin{itemize}
+                        \item {
+                            Case base $x = \epsilon$ \\
+                            Entonces, $n_a(x) = n_a(\epsilon) = 0 = 
+                            n_b(\epsilon) = n_b(x)$, por lo que en 
+                            particular, $n_a(x) \geq n_b(x)$
+                        }
+                        \item {
+                            Hipótesis \\
+                            Sea $x \in L$. Entonces, $n_a(x) \geq n_b(x)$.
+                        }
+                        \item {
+                            Paso inductivo.\\
+                            Sea $w \in L$ construida usando una de las reglas 
+                            recursivas de la definición de $L$.\\
+                            Como hay dos reglas recursivas, entonces hay dos 
+                            casos para $w$.
+                            \begin{itemize}
+                                \item {
+                                    Caso 1, $w = xa$.\\
+                                    Entonces, $n_a(xa) = n_a(x) + 1$ y
+                                    $n_b(xa) = n_b(x)$.\\ 
+                                    Y por hipótesis, tenemos que 
+                                    $n_a(x) \geq n_b(x)$, por lo que que 
+                                    $n_a(x) + 1 > n_b(x)$.\\
+                                    Y como es mayor, en particular 
+                                    $n_a(xa) = n_a(x) + 1 \geq n_b(x) = n_b(xa)$
+                                }
+                                \item {
+                                    Case 2, $w = xba$.\\
+                                    Entonces, $n_a(xba) = n_a(x) + 1$ y
+                                    $n_b(xba) = n_b(x) + 1$.\\ 
+                                    Y por hipótesis, tenemos que 
+                                    $n_a(x) \geq n_b(x)$, por lo que que 
+                                    $n_a(xba) = n_a(x) + 1 \geq n_b(x) + 1 
+                                    = n_b(xba)$.
+                                }
+                            \end{itemize}
+                        }
+                    \end{itemize}
                 }
                 \item {
-                    $x$ no contiene la subcadena $bb$.
+                    $x$ no contiene la subcadena $bb$.\\
+                    Como $L$ tiene una definición recursiva, tiene un principio 
+                    de inducción estructural.\\
+                    Entonces, demostremos esta propiedad por inducción.
+                    \begin{itemize}
+                        \item {
+                            Case base $x = \epsilon$.\\
+                            Como $\epsilon$ no tiene ningún símbolo, entonces en
+                            particular no tiene ninguna $bb$.
+                        }
+                        \item {
+                            Hipótesis
+                            Sea $x \in L$. Entonces, $x$ mo tiene como subcadena 
+                            $bb$.
+                        }
+                        \item {
+                            Paso inductivo.
+                            Sea $w \in L$ construida usando una de las reglas 
+                            recursivas de la definición de $L$.\\
+                            Como hay dos reglas recursivas, entonces hay dos 
+                            casos para $w$.
+                            \begin{itemize}
+                                \item {
+                                    Caso 1, $w = xa$.\\
+                                    Por hipótesis, $x$ no tiene como subcadena a
+                                    $bb$. Y como a $xa$ sólo se le concatena 
+                                    una $a$, entonces $xa$ tampoco puede tener
+                                    como subcadena a $bb$.
+                                }
+                                \item {
+                                    Case 2, $w = xba$.
+                                    Por hipótesis, $x$ no tiene como subcadena a
+                                    $bb$. Y como a $xba$ sólo se le concatena 
+                                    una $ba$, entonces $xba$ tampoco puede tener
+                                    como subcadena a $bb$.
+                                }
+                            \end{itemize}
+                        }
+                    \end{itemize}
                 }
             \end{enumerate}
             
