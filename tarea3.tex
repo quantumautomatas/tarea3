@@ -10,13 +10,17 @@
 % Estructuras lógicas
 \usepackage{bussproofs}
 
-% Algunos comandos pra trabajar con ecuaciones (alinear)
+% Algunos comandos para trabajar con ecuaciones (alinear)
 \usepackage{amsmath}
+
+%Paquete para español y caracteres especiales
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
 
 \begin{document}
     % Título
     \title{Autómatas y Lenguajes formales \\
-    \large 2912-2 \\
+    \large 2019-2 \\
     \large Ejercicio semanal 3}
 
     \date{Fecha de entrega: 15 de febrero del 2019}
@@ -52,7 +56,7 @@
                     Entonces, demostremos esta propiedad por inducción.
                     \begin{itemize}
                         \item {
-                            Case base $x = \epsilon$ \\
+                            Caso base $x = \epsilon$ \\
                             Entonces, $n_a(x) = n_a(\epsilon) = 0 = 
                             n_b(\epsilon) = n_b(x)$, por lo que en 
                             particular, $n_a(x) \geq n_b(x)$
@@ -79,7 +83,7 @@
                                     $n_a(xa) = n_a(x) + 1 \geq n_b(x) = n_b(xa)$
                                 }
                                 \item {
-                                    Case 2, $w = xba$.\\
+                                    Caso 2, $w = xba$.\\
                                     Entonces, $n_a(xba) = n_a(x) + 1$ y
                                     $n_b(xba) = n_b(x) + 1$.\\ 
                                     Y por hipótesis, tenemos que 
@@ -104,7 +108,7 @@
                         }
                         \item {
                             Hipótesis
-                            Sea $x \in L$. Entonces, $x$ mo tiene como subcadena 
+                            Sea $x \in L$. Entonces, $x$ no tiene como subcadena 
                             $bb$.
                         }
                         \item {
@@ -122,7 +126,7 @@
                                     como subcadena a $bb$.
                                 }
                                 \item {
-                                    Case 2, $w = xba$.
+                                    Caso 2, $w = xba$.
                                     Por hipótesis, $x$ no tiene como subcadena a
                                     $bb$. Y como a $xba$ sólo se le concatena 
                                     una $ba$, entonces $xba$ tampoco puede tener
@@ -146,12 +150,19 @@
             \begin{enumerate}
                 \item {
                     Que corresponda a $r$ pero no a $s$.
+                    
+                    Proponemos la cadena w = $\bf{aa}$\\
                 }
                 \item {
                     Que corresponda a $s$ pero no a $r$.
+                    
+                   Proponemos la cadena w = $\bf{aba}$\\
+                   
                 }
                 \item {
                     Que corresponda tanto a $r$ como a $s$.
+                    
+                    Esta cadena no existe, ya que r debe tener por lo menos la secuencia $\bf{aba}$, tomando todas las cerraduras de Kleeine como $\epsilon$, mientras que s no puede formar esta secuencia de ninguna manera, ya que la última a  de aba, no puede existir debido a que está la cerradura de a concatenada con la cerradura de b unicamente.
                 }
             \end{enumerate}
         }
