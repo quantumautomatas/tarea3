@@ -95,7 +95,27 @@
                     $x$ no contiene la subcadena $bb$.\\
                     Como $L$ tiene una definición recursiva, tiene un principio 
                     de inducción estructural.\\
-                    Entonces, demostremos esta propiedad por inducción.
+                    Pero antes de demostrarla, demostremos una propiedad auxiliar:
+                    $x$ no termina en $b$.\\
+                    Hay una regla básica y dos recursivas. Veamos que esto se 
+                    cumple para esas tres reglas.
+
+                    \begin{itemize}
+                        \item {
+                            Para la regla base, con $x = \epsilon$ tenemos que 
+                            $\epsilon$ no tiene ningún símbolo, por lo que en 
+                            particular no termina en $b$.
+                        }
+                        \item {
+                            Para ambas reglas recursivas, tenemos que 
+                            $x = wa$ o $w = wba$ para alguna $w \in L$. Como 
+                            en ambos casos termina en $a$, no termina en $b$.
+                        }
+                    \end{itemize}
+                    Por lo que ninguna cadena de $L$ termina en $b$. 
+
+                    Volviendo al problema principal, demostremos la propiedad 
+                    por inducción.
                     \begin{itemize}
                         \item {
                             Case base $x = \epsilon$.\\
@@ -122,11 +142,12 @@
                                     como subcadena a $bb$.
                                 }
                                 \item {
-                                    Case 2, $w = xba$.
+                                    Case 2, $w = xba$. \\
                                     Por hipótesis, $x$ no tiene como subcadena a
                                     $bb$. Y como a $xba$ sólo se le concatena 
-                                    una $ba$, entonces $xba$ tampoco puede tener
-                                    como subcadena a $bb$.
+                                    una $ba$, y $x$ no termina en $b$ por lo
+                                    demostrado anteriormente,  $xba$ tampoco 
+                                    puede tener como subcadena a $bb$.
                                 }
                             \end{itemize}
                         }
